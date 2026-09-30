@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { DatabaseSync } from 'node:sqlite';
 
 // node:sqlite is built into Node 24+ — no npm install required.
-const dbPath = process.env.DB_PATH ?? './database.db';
+const dbPath = process.env.VERCEL ? '/tmp/database.db' : (process.env.DB_PATH ?? './database.db');
 const db = new DatabaseSync(dbPath);
 
 // WAL mode for better concurrent read performance
