@@ -2,6 +2,8 @@
 
 A full-stack web app for managing college club events. Students can browse and register for events; admins can create, edit, delete, and feature events via a protected dashboard.
 
+**Demo Note**: The website currently does not have any events added, so the event sections may appear empty. To add events, log in through the Admin Panel using the admin credentials and create events from the dashboard.
+
 **Stack:** React (Vite) · Node.js + Express · SQLite (better-sqlite3) · JWT + bcrypt
 
 ---
