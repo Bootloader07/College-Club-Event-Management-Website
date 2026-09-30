@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import { DatabaseSync } from 'node:sqlite';
+import bcrypt from 'bcryptjs';
 
 // node:sqlite is built into Node 24+ — no npm install required.
 const dbPath = process.env.VERCEL ? '/tmp/database.db' : (process.env.DB_PATH ?? './database.db');
@@ -65,6 +66,23 @@ try {
   db.exec("ALTER TABLE events ADD COLUMN ticket_price REAL DEFAULT 0;");
 } catch (e) {
   // column already exists
+}
+
+// ─── DEMO ADMIN SEED (IDEMPOTENT) ─────────────────────────────────────────────
+try {
+  const existingAdmin = db.prepare('SELECT id FROM admins WHERE username = ?').get('admin');
+  if (!existingAdmin) {
+    const adminPassword = process.env.ADMIN_PASSWORD ?? 'admin123';
+    const hash = bcrypt.hashSync(adminPassword, 12);
+    db.prepare('INSERT INTO admins (username, password_hash) VALUES (?, ?)').run('admin', hash);
+  }
+} catch (err) {
+  console.error('Error seeding demo admin:', err);
+}
+
+// Fallback JWT_SECRET for demo environments if unset
+if (!process.env.JWT_SECRET) {
+  process.env.JWT_SECRET = 'dev_jwt_secret_replace_in_production';
 }
 
 /**
