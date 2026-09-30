@@ -1,0 +1,238 @@
+/* ══════════════════════════════════════════════════════════
+   EVENT-DETAIL.CSS — Event Detail in Red & White Theme
+   ══════════════════════════════════════════════════════════ */
+
+.event-detail-page {
+  padding: 36px 0 80px;
+  flex: 1;
+  background-color: var(--color-base);
+}
+
+.event-detail-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-crimson);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
+}
+
+.event-detail-back-link:hover {
+  color: var(--color-crimson-hover);
+  transform: translateX(-4px);
+}
+
+/* ── Hero Banner with Media ── */
+.event-detail-banner {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 40px;
+  background-color: #EDF2F7;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+.event-detail-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.event-detail-banner-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+  color: var(--color-muted);
+}
+
+.event-detail-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Two-Column Layout ── */
+.event-detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.event-detail-main {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.event-detail-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.event-detail-desc-heading {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 12px;
+}
+
+.event-detail-desc-text {
+  color: var(--color-text-2);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+/* ── Sticky Sidebar Card ── */
+.event-detail-sidebar {
+  position: sticky;
+  top: 96px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.event-detail-price-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 16px;
+}
+
+.event-detail-price-label {
+  font-size: 14px;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.event-detail-price-value {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-crimson);
+}
+
+.event-detail-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.event-detail-meta-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--color-text-2);
+}
+
+.event-detail-meta-icon {
+  font-size: 1.2rem;
+  color: var(--color-crimson);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.event-detail-meta-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-detail-meta-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.event-detail-meta-val {
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 2px;
+}
+
+.event-detail-capacity-box {
+  background: #F8FAFC;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.event-detail-register-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* Registered Success Pill */
+.registered-status-box {
+  background: #ECFDF5;
+  border: 1px solid #10B981;
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.registered-status-pill {
+  color: #059669;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.registered-status-date {
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .event-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-detail-sidebar {
+    position: static;
+  }
+}

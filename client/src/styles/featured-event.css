@@ -1,0 +1,160 @@
+/* ══════════════════════════════════════════════════════════
+   FEATURED-EVENT.CSS — ABES Institutional Featured Banner
+   (Inspired by Welcome Banner in Image 2: Navy/Crimson with Gold Accent)
+   ══════════════════════════════════════════════════════════ */
+
+.featured-section {
+  margin: 20px 0 64px;
+  width: 100%;
+}
+
+.featured-banner {
+  position: relative;
+  min-height: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(20, 47, 85, 0.12);
+  background-color: var(--color-navy);
+}
+
+/* 4px Gold Top Accent Line (Matches Image 2 Welcome Card) */
+.featured-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+  z-index: 10;
+}
+
+.featured-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(20, 47, 85, 0.95) 0%,
+    rgba(122, 22, 24, 0.88) 45%,
+    rgba(15, 23, 42, 0.5) 100%
+  );
+  z-index: 2;
+}
+
+.featured-content {
+  position: relative;
+  z-index: 3;
+  padding: 56px 64px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  color: #FFFFFF;
+}
+
+.featured-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.featured-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent-hover);
+  margin-bottom: 2px;
+}
+
+.featured-category-badge {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.featured-title {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+
+.featured-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.featured-description {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.featured-btn {
+  background: var(--color-accent) !important;
+  color: #0F172A !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-radius: var(--radius) !important;
+  padding: 12px 30px !important;
+  font-size: 15px !important;
+  margin-top: 8px;
+  box-shadow: 0 4px 16px rgba(201, 146, 42, 0.4) !important;
+  transition: all 0.2s ease !important;
+}
+
+.featured-btn:hover {
+  background: var(--color-accent-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 146, 42, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+  .featured-content {
+    padding: 36px 24px;
+  }
+
+  .featured-meta {
+    gap: 12px;
+  }
+}

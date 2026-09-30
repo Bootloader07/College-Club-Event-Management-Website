@@ -1,0 +1,264 @@
+/* ══════════════════════════════════════════════════════════
+   EVENTS.CSS — Event Grid & Cards in ABES Red & White Theme
+   ══════════════════════════════════════════════════════════ */
+
+.events-page {
+  padding: 0 0 80px;
+  flex: 1;
+  background-color: var(--color-base);
+}
+
+.events-header {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F6F9 100%);
+  border-bottom: 1px solid var(--color-border);
+  padding: 56px 48px 40px;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.events-title {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.events-subtitle {
+  color: var(--color-muted);
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+@media (max-width: 1024px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 680px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .events-header {
+    padding: 40px 20px 28px;
+  }
+}
+
+/* ── Event Card (Crisp White Card with Soft Shadow) ── */
+.event-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(122, 22, 24, 0.25);
+}
+
+.event-card-media {
+  position: relative;
+  height: 190px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #EDF2F7;
+}
+
+.event-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-card-img {
+  transform: scale(1.03);
+}
+
+/* Gradient overlay on image bottom */
+.event-card-media::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.95), #FFFFFF);
+}
+
+.event-card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: #F1F5F9;
+  color: var(--color-muted);
+}
+
+.event-card-badge-wrap {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+}
+
+.event-card-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.event-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.event-card-title:hover {
+  color: var(--color-crimson);
+}
+
+.event-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text-2);
+}
+
+.event-card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-card-desc {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Capacity bar */
+.event-card-capacity {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.event-card-capacity-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.event-card-capacity-track {
+  width: 100%;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.event-card-capacity-fill {
+  height: 100%;
+  background: var(--color-crimson);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.event-card-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 4px 0 0;
+}
+
+/* Price & Button Footer */
+.event-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.event-card-price-pill {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+.price-free {
+  background: #DCFCE7;
+  color: #15803D;
+  border: 1px solid #BBF7D0;
+}
+
+.price-paid {
+  background: #FEF3C7;
+  color: #B45309;
+  border: 1px solid #FDE68A;
+}
+
+.event-card-btn {
+  background: var(--color-crimson);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(122, 22, 24, 0.2);
+}
+
+.event-card-btn:hover {
+  background: var(--color-crimson-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(122, 22, 24, 0.3);
+}
+
+.event-card-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
